@@ -1,0 +1,25 @@
+Go to the project folder:
+cd C:\xampp\htdocs\smart-attendance
+
+Set up Python 3.10 and install the dependencies. You only need to do this once:
+py -3.10 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+
+Register a user and capture face images:
+.\.venv\Scripts\python.exe capture_faces.py
+
+Enter a numeric user ID and the name you want to register. 
+Look at the webcam while it captures images.
+
+Train the model:
+.\.venv\Scripts\python.exe train_model.py
+
+Start taking attendance:
+.\.venv\Scripts\python.exe attendance.py
+The webcam window shows recognition results. Press Q to quit.
+
+In PowerShell, stop the app if it’s running, then run this from the project folder:
+Set-Content .\users.json '{}' -NoNewline -Encoding ASCII; Remove-Item .\dataset\user.*.jpg, .\trainer\trainer.yml, .\trainer\labels.json, .\attendance\attendance.csv -ErrorAction SilentlyContinue
+
+This empties the user list and removes captured face images, the trained model, and attendance records.
