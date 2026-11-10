@@ -9,7 +9,9 @@ py -3.10 -m venv .venv
 Register a user and capture face images:
 .\.venv\Scripts\python.exe capture_faces.py
 
-Enter a numeric user ID and the name you want to register. 
+Enter a numeric user ID and the name you want to register. Do not start with 0
+Right Example : (1,2,3)
+Wrong Example : (001,002,003) 
 Look at the webcam while it captures images.
 
 Train the model:
