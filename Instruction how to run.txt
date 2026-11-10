@@ -9,7 +9,7 @@ py -3.10 -m venv .venv
 Register a user and capture face images:
 .\.venv\Scripts\python.exe capture_faces.py
 
-Enter a numeric user ID and the name you want to register. Do not start with 0
+Enter a numeric user ID and the name you want to register. do not start with 0
 Right Example : (1,2,3)
 Wrong Example : (001,002,003) 
 Look at the webcam while it captures images.
@@ -20,6 +20,13 @@ Train the model:
 Start taking attendance:
 .\.venv\Scripts\python.exe attendance.py
 The webcam window shows recognition results. Press Q to quit.
+
+View and manage attendance:
+Start Apache in the XAMPP Control Panel, then open:
+http://localhost/smart-attendance/attendance.html
+
+Use Add record, Edit, or Delete to update attendance\attendance.csv directly.
+Pause the webcam app while editing to avoid simultaneous changes to the CSV.
 
 In PowerShell, stop the app if it’s running, then run this from the project folder:
 Set-Content .\users.json '{}' -NoNewline -Encoding ASCII; Remove-Item .\dataset\user.*.jpg, .\trainer\trainer.yml, .\trainer\labels.json, .\attendance\attendance.csv -ErrorAction SilentlyContinue
